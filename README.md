@@ -54,12 +54,6 @@ This repository analyzes retail visit and order data to evaluate agent performan
 |---------------------------------------------------------------------|--------------|-----------|
 | 004bbd803a926c3608f6c04a7a47221a4fb8badf3f37ffcbe1a2f24d42ec0550    | 5973         |3413737.481|
 
-          |
-
-
-
-
-
 <img width="997" alt="image" src="https://github.com/user-attachments/assets/92d847ab-b5a0-4d05-9ae7-6f898434c402" />
 
 ---
