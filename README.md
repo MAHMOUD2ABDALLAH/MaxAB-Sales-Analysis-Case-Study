@@ -1,4 +1,4 @@
-<img width="150" height="120" align="right" alt="maxab-logo@2x eec4ea5de15dbed867c66028cce7d556e3f4160d" src="https://github.com/user-attachments/assets/2ca32cca-62f5-4653-8a37-84f97be63d57" />
+<img width="100" height="100" align="right" alt="1652895661maxab-png1652895661" src="https://github.com/user-attachments/assets/3976afc4-6d42-43bc-9223-9975389cb1c5" />
 
 # MaxAB Sales Development Analyst Case Study
 
