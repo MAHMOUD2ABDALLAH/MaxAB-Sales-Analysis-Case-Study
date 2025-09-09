@@ -1,62 +1,138 @@
 <img width="100" height="100" align="right" alt="1652895661maxab-png1652895661" src="https://github.com/user-attachments/assets/3976afc4-6d42-43bc-9223-9975389cb1c5" />
 
-# MaxAB Sales Development Analyst Case Study
+# MaxAB Sales Analysis Case Study
+<img width="1000" height="1000" alt="Max AB BI" src="https://github.com/user-attachments/assets/36272f50-4822-4c21-9790-4e1f638750cd" />
 
-This repository analyzes retail visit and order data to evaluate agent performance, customer behavior, and overall business efficiency using Excel Power Query, PivotTables, and formulas.
+## Project Overview
 
-## Dataset Overview
+This Power BI project provides a comprehensive analysis of Maxab's sales operations by integrating agent visit data and retailer order information. The solution transforms raw field data into an interactive dashboard that delivers actionable insights across sales performance, retailer behavior, and agent productivity to drive strategic business decisions.
 
-### 1. **Visits Table**
-| Column Name        | Description                               |
-|--------------------|-------------------------------------------|
-| `visit_id`         | Unique identifier for each visit          |
-| `agent_id`         | Sales agent involved in the visit         |
-| `retailer_id`      | Unique retailer visited                   |
-| `visit_date`       | Date of the visit                         |
-| `start_time`       | Visit start time                          |
-| `arrive_time`      | Agent arrival time                        |
-| `end_time`         | Visit end time                            |
-| `visit_reason`     | Reason for the visit                      |
-| `manager_id`       | Sales manager responsible                 |
+## Business Tasks
 
-### 2. **Orders Table**
-| Column Name              | Description                            |
-|--------------------------|----------------------------------------|
-| `order_id`               | Unique order identifier                |
-| `order_date`             | Timestamp of order creation            |
-| `nmv`                    | Net Merchandise Value                  |
-| `retailer_id`            | Retailer placing the order             |
-| `sales_status_id`        | Status identifier (e.g., delivered)    |
-| `order_status_description` | Textual status of the order         |
+The analysis aimed to:
+1.  Clean and prepare raw visit and order data for analysis
+2.  Measure agent performance through key metrics (Strike Rate, Ticket Size)
+3.  Analyze retailer activation patterns (Organic vs Inorganic)
+4.  Calculate monthly retention rates and identify growth opportunities
+5.  Segment retailers using RFM analysis for targeted strategies
+6.  Optimize agent time utilization and route efficiency
+7.  Build an interactive dashboard for ongoing performance monitoring
 
----
+## Data Sources
 
-##  Tools Used
-- **Microsoft Excel**
-- **Power Query**
-- **PivotTables**
-- **Excel Formulas**
+The analysis uses two primary datasets:
+1.  **VISIT Table**: Contains agent visit information (`visit_id`, `agent_id`, `retailer_id`, `visit_date`, `start_time`, `arrive_time`, `end_time`, `visit_reason`, `manager_id`)
+2.  **ORDER Table**: Contains order transaction details (`order_id`, `order_date`, `retailer_id`, `NMV`, `sales_status_id`, `sales_order_status_description`)
 
----
+## Data Model
 
-## Analysis & Methodology
+I built a **Star Schema** data model in Power BI for optimal performance:
 
-### **Question 1: Orders Associated with Agents**
-**Goal:** Count how many orders are associated with agents on days they visited the retailer.
+*   **Fact Tables:** `VISIT`, `ORDER`
+*   **Dimension Tables:** `RETAILERS` (bridge table), `CALENDAR` (custom date table)
+*   **Relationships:**
+    *   `RETAILERS[Retailer ID]` → `VISIT[retailer_id]` (1:Many)
+    *   `RETAILERS[Retailer ID]` → `ORDER[retailer_id]` (1:Many)
+    *   `CALENDAR[Date]` → `VISIT[visit_date]` (Active)
+    *   `CALENDAR[Date]` → `ORDER[order_date]` (Inactive)
 
-**Steps:**
-1. Extract date from `visit_date` and `order_date`.
-2. Merge `visits` and `orders` on:
-   - `retailer_id`
-   - `visit_date` = `order_date`
-3. Group by `agent_id`, count `order_id`.
+## Key Metrics & Analysis
 
-**Output Table:**
-| Agent ID                                                            | Orders Count | NMVs  Sum |
-|---------------------------------------------------------------------|--------------|-----------|
-| 004bbd803a926c3608f6c04a7a47221a4fb8badf3f37ffcbe1a2f24d42ec0550    | 5973         |3413737.481|
+### Core KPIs
+*   Total Visits, Associated Orders, Strike Rate
+*   Total NMV, Average Ticket Size
+*   Monthly Active Retailers, Retention Rate
 
-<img width="997" alt="image" src="https://github.com/user-attachments/assets/92d847ab-b5a0-4d05-9ae7-6f898434c402" />
+### Advanced Analysis
 
----
+1.  **Agent Performance Segmentation:**
+    *   Calculated Strike Rate and Ticket Size for each agent
+    *   Identified top performers and coaching opportunities
+    *   Analyzed time utilization and travel efficiency
 
+2.  **Retailer Activation Analysis:**
+    *   Distinguished between Organic (self-activated) and Inorganic (agent-driven) activations
+    *   Tracked daily activation patterns and trends
+
+3.  **RFM Retailer Segmentation:**
+    *   Calculated Recency, Frequency, and Monetary value for each retailer
+    *   Segmented retailers into categories: Champions, Loyal, At Risk, Need Attention
+    *   Developed targeted strategies for each segment
+
+4.  **Visit Impact Analysis:**
+    *   Measured effectiveness of agent visits by time of month
+    *   Identified optimal timing for maximum impact
+
+## Dashboard
+
+The interactive Power BI report consists of four pages:
+
+1.  **Executive Overview:** High-level KPIs, performance trends, and agent leaderboard
+2.  **Agent Performance:** Detailed analysis of strike rates, ticket sizes, and time utilization
+3.  **Retailer Analysis:** RFM segmentation, retention trends, and activation patterns
+4.  **Operational Insights:** Visit impact analysis and operational efficiency metrics
+
+## Tools & Technologies
+
+*   **Power BI:** Data modeling, DAX measures, visualization, and dashboard design
+*   **Power Query (M):** Data transformation and cleaning
+*   **DAX:** Advanced calculations for performance metrics and time intelligence
+
+## How to Use
+
+1.  Download the `Maxab_Sales_Analytics.pbix` file
+2.  Open in Power BI Desktop
+3.  Use the interactive filters to analyze performance by:
+    *   Time period (month, quarter, year)
+    *   Agent teams or individual performers
+    *   Retailer segments
+    *   Geographic regions
+
+## Insights & Recommendations
+
+1.  **Agent Performance Optimization:**
+    *   Implement targeted coaching for agents with low strike rates
+    *   Develop reward programs for top performers
+    *   Optimize travel routes to reduce non-productive time
+
+2.  **Retailer Retention Strategy:**
+    *   Create tailored engagement programs for At Risk retailers
+    *   Develop loyalty rewards for Champion retailers
+    *   Implement proactive outreach for declining segments
+
+3.  **Activation Improvement:**
+    *   Focus agent efforts on high-potential geographic areas
+    *   Develop self-service tools to increase organic activations
+    *   Optimize visit scheduling based on impact analysis
+
+4.  **Operational Efficiency:**
+    *   Streamline visit reporting and order tracking
+    *   Implement real-time performance monitoring
+    *   Develop predictive analytics for resource allocation
+
+## Project Structure
+
+```
+Maxab-Sales-Analytics/
+│
+├── Data/
+│   ├── VISIT.csv
+│   └── ORDER.csv
+│
+├── Assets/
+│   └── dashboard_overview.png
+│
+├── Documentation/
+│   ├── DAX_Measures.pdf
+│   └── User_Guide.pdf
+│
+├── Maxab_Sales_Analytics.pbix
+└── README.md
+```
+
+## Author
+
+**Mahmoud Abdallah**
+
+### Any Questions
+**Mahmoud_Abdallah20@outlook.com**
