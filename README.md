@@ -1,7 +1,6 @@
-<img width="100" height="100" align="right" alt="1652895661maxab-png1652895661" src="https://github.com/user-attachments/assets/3976afc4-6d42-43bc-9223-9975389cb1c5" />
-
 # MaxAB Sales Analysis Case Study
-<img width="1000" height="1000" alt="Max AB BI" src="https://github.com/user-attachments/assets/36272f50-4822-4c21-9790-4e1f638750cd" />
+
+<img width="994" height="570" alt="MaxAB" src="https://github.com/user-attachments/assets/8e37e9c2-02e2-4c63-806e-38f70ac62643" />
 
 ## Project Overview
 
