@@ -136,4 +136,4 @@ Maxab-Sales-Analytics/
 ### Any Questions
 **Mahmoud_Abdallah20@outlook.com**
 
-<img width="200" height="200" alt="MaxAB" src="https://github.com/user-attachments/assets/e4487098-f9ae-46ca-bdd3-9c6c2304926f" />
+<img width="300" height="300" alt="Maxab" src="./Maxab.svg" />
