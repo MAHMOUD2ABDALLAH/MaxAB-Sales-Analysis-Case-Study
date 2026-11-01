@@ -135,5 +135,3 @@ Maxab-Sales-Analytics/
 
 ### Any Questions
 **Mahmoud_Abdallah20@outlook.com**
-
-<img width="300" height="300" alt="Maxab" src="./Maxab.svg" />
